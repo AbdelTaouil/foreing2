@@ -17,7 +17,7 @@ class CreateMembresTable extends Migration
             $table->id();
             $table->string('email');
             $table->unsignedBigInteger('profil_id');
-            $table->foreign('profil_id')->references('id')->on('profils');            
+            $table->foreign('profil_id')->references('id')->on('profils')->onDelete('cascade');   
             $table->timestamps();
         });
     }

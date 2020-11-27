@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::post('/profil',[ProfilController::class, 'store']);
 Route::post('/membre',[MembreController::class, 'store']);
 Route::get('/welcome',[MembreController::class, 'index']);
+Route::post('/user-del/{id}', [ProfilController::class, 'destroy']);

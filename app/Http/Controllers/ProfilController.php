@@ -50,7 +50,6 @@ class ProfilController extends Controller
         $membres->save();
 
         return redirect()->back();
-
     }
 
     /**
@@ -93,8 +92,12 @@ class ProfilController extends Controller
      * @param  \App\Models\Profil  $profil
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profil $profil)
+    public function destroy($id)
     {
-        //
+        $profilD=Profil::find($id);
+        $profilD->delete();
+
+        return redirect()->back();
+
     }
 }

@@ -9,12 +9,21 @@
 </head>
 <body>
     
-    @foreach ($profil as $item)
+    
+
+   
+        @foreach ($profil as $item)
+        <form action="/user-del/{{$item->id}}" method="post">
+
+            @csrf
         <h3>{{$item->nom}}</h3>
         <h3>{{$item->prenom}}</h3>
         <h3>{{$item->age}}</h3>
         <h3>{{$item->membre->email}}</h3>
-    @endforeach
 
+        <button type="submit">Delete </button>
+    </form>
+    @endforeach
+     
 </body>
 </html>
